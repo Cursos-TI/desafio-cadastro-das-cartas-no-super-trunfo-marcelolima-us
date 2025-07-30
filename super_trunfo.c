@@ -113,34 +113,23 @@ int main()
        float SuperPoder1 = (float)Populacao1 + Area1 + PIB1 + PontosTuristicos1 + PIBPerCapita1 + (1.0 / DensidadePopulacional1);
        float SuperPoder2 = (float)Populacao2 + Area2 + PIB2 + PontosTuristicos2 + PIBPerCapita2 + (1.0 / DensidadePopulacional2);
 
-       // Comparação das cartas
-       printf("\nComparação de Cartas:\n\n");
+       // Comparação das cartas usando apenas o atributo População
+       printf("\nComparação de cartas (Atributo: População):\n\n");
 
-       printf("População: Carta %d venceu (%d)\n",
-              (Populacao1 > Populacao2) ? 1 : 2,
-              (Populacao1 > Populacao2) ? 1 : 0);
+       printf("Carta 1 - %s (%c): %lu\n", NomeCidade1, Estado1, Populacao1);
+       printf("Carta 2 - %s (%c): %lu\n", NomeCidade2, Estado2, Populacao2);
 
-       printf("Área: Carta %d venceu (%d)\n",
-              (Area1 > Area2) ? 1 : 2,
-              (Area1 > Area2) ? 1 : 0);
-
-       printf("PIB: Carta %d venceu (%d)\n",
-              (PIB1 > PIB2) ? 1 : 2,
-              (PIB1 > PIB2) ? 1 : 0);
-
-       printf("Pontos Turísticos: Carta %d venceu (%d)\n",
-              (PontosTuristicos1 > PontosTuristicos2) ? 1 : 2,
-              (PontosTuristicos1 > PontosTuristicos2) ? 1 : 0);
-
-       printf("Densidade Populacional: Carta %d venceu (%d)\n",
-              (DensidadePopulacional1 < DensidadePopulacional2) ? 1 : 2,
-              (DensidadePopulacional1 < DensidadePopulacional2) ? 1 : 0);
-
-       printf("PIB per Capita: Carta %d venceu (%d)\n",
-              (PIBPerCapita1 > PIBPerCapita2) ? 1 : 2,
-              (PIBPerCapita1 > PIBPerCapita2) ? 1 : 0);
-
-       printf("Super Poder: Carta %d venceu (%d)\n",
-              (SuperPoder1 > SuperPoder2) ? 1 : 2,
-              (SuperPoder1 > SuperPoder2) ? 1 : 0);
+       // Determina a carta vencedora baseado na População
+       if (Populacao1 > Populacao2)
+       {
+              printf("\nResultado: Carta 1 (%s) venceu!\n", NomeCidade1);
+       }
+       else if (Populacao2 > Populacao1)
+       {
+              printf("\nResultado: Carta 2 (%s) venceu!\n", NomeCidade2);
+       }
+       else
+       {
+              printf("\nResultado: Empate!\n");
+       }
 }
